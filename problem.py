@@ -47,28 +47,36 @@ temp2x.append(current_position_x)
 temp2y.append(current_position_y)
 
 array_visited.append(0)
+#todo: ogarnąć pętle
+while True:
+    while m < num:
 
-while m < num:
+        while True:
+            temp = randrange(1, num)
+            print(len(array_visited))
+            if temp not in array_visited or len(array_visited) == num:
+                break
 
-    while True:
-        temp = randrange(1, num)
-        print(len(array_visited))
-        if temp not in array_visited or len(array_visited) == num:
-            break
+        # todo: sprawdzić chyba błąd
+        array_visited.append(temp)
 
-    # todo: sprawdzić chyba błąd
-    array_visited.append(temp)
+        current_position_x = array[temp][1]
+        temp2x.append(current_position_x)
+        sumx = sumx + current_position_x
 
-    current_position_x = array[temp][1]
-    temp2x.append(current_position_x)
-    sumx = sumx + current_position_x
+        current_position_y = array[temp][2]
+        temp2y.append(current_position_y)
+        sumy = sumy + current_position_y
 
-    current_position_y = array[temp][2]
-    temp2y.append(current_position_y)
-    sumy = sumy + current_position_y
+        suma_final=
 
-    print(current_position_x)
-    m = m + 1
+        print(current_position_x)
+        m = m + 1
+
+    if
+
+
+
 
 plt.plot(temp2x, temp2y, 'r', zorder=2, lw=2)
 plt.scatter(temp2x, temp2y, s=50, zorder=3)
