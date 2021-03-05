@@ -14,7 +14,7 @@ test_array = [[1, 207, 217],
 
 
 def generateArray(num):
-    x, nr, xx, yy = 1, 0, 0, 0
+    x, nr, xx, yy= 1, 0, 0, 0
     temp = []
     while x <= num:
         nr = x
@@ -34,6 +34,7 @@ for arr in array:
     print(arr)
 m = 0
 n = 0
+l=0
 # koordynaty  pierwszego miasta
 current_position_x = array[0][1]
 current_position_y = array[0][2]
@@ -43,12 +44,17 @@ array_visited = [0]
 temp2x = []
 temp2y = []
 
-temp2x.append(current_position_x)
-temp2y.append(current_position_y)
+minimum=100000
 
-array_visited.append(0)
-#todo: ogarnąć pętle
-while True:
+finalarrx = []
+finalarry = []
+suma_final=0
+
+# todo: ogarnąć pętle
+while l < 100:
+    temp2x.append(current_position_x)
+    temp2y.append(current_position_y)
+    array_visited.append(0)
     while m < num:
 
         while True:
@@ -68,18 +74,28 @@ while True:
         temp2y.append(current_position_y)
         sumy = sumy + current_position_y
 
-        suma_final=
+        suma_final = sumy + sumx
 
         print(current_position_x)
         m = m + 1
 
-    if
+    if suma_final < minimum:
+        print(suma_final)
+        finalarrx.clear()
+        finalarry.clear()
+        finalarrx = temp2x
+        finalarry = temp2y
+        minimum=suma_final
 
+    temp2x.clear()
+    temp2y.clear()
+    suma_final = 0
+    sumx = 0
+    sumy = 0
+    l = l + 1
 
-
-
-plt.plot(temp2x, temp2y, 'r', zorder=2, lw=2)
-plt.scatter(temp2x, temp2y, s=50, zorder=3)
+plt.plot(finalarrx, finalarry, 'r', zorder=2, lw=2)
+plt.scatter(finalarrx, finalarry, s=50, zorder=3)
 plt.show()
 
 # 1 losuj miasto początkowe
